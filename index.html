@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joseph Marquis | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="constellation-canvas"></canvas>
+
+  <!-- Hero -->
+  <section id="main-hero">
+    <div class="hero-content">
+      <h1>Hello, I'm <strong><span class="highlight-red">Joseph</span>.</strong></h1>
+      <p>Aspiring Web Designer | Horror Enthusiast</p>
+      <a href="#projects" class="hero-button">View my Projects</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      
+      <!-- Left column: headshot + bio -->
+      <div class="about-left">
+        <img src="icons/headshot.png" alt="Headshot" class="headshot" />
+        <p class="bio-text">
+          I’m a passionate developer who thrives at the intersection of horror, AI, and immersive web design. When I’m not building spooky interactive projects, I’m either exploring the world of video games, experimenting in the kitchen, or learning new coding tools to bring unique experiences to life.
+        </p>
+      </div>
+  
+      <!-- Right column: skill icons -->
+      <div class="about-right">
+        <div class="skills-grid">
+          <div class="col">
+            <img src="icons/html.png" alt="HTML">
+            <img src="icons/css.png" alt="CSS">
+            <img src="icons/javascript.png" alt="JavaScript">
+          </div>
+          <div class="col mid-offset">
+            <img src="icons/github.png" alt="GitHub">
+            <img src="icons/git.png" alt="Git">
+            <img src="icons/python.png" alt="Python">
+            <img src="icons/node.png" alt="Node.js">
+          </div>
+          <div class="col">
+            <img src="icons/react.png" alt="React">
+            <img src="icons/cert1.png" alt="Cert 1">
+            <img src="icons/cert2.png" alt="Cert 2">
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>  
+  
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+  
+    <!-- HauntSync -->
+    <div class="project-showcase">
+      <img src="icons/HSlogo.png" alt="HauntSync Logo" class="project-banner hs-logo">
+      <h3>HauntSync</h3>
+      <p class="project-desc">
+        A creepy-cool calendar app designed for haunted attractions and spooky event coordinators.<br>
+      </p>
+    </div>
+  
+    <!-- SLAB -->
+    <div class="project-showcase">
+      <img src="icons/slab.png" alt="SLAB Website" class="project-banner">
+      <h3>SLAB</h3>
+      <p class="project-desc">
+        A horror-themed parody restaurant website with dark humor and interactive elements.<br>
+        GitHub: <a href="https://github.com/D3adchef/SLAB" class="project-link" target="_blank">https://github.com/D3adchef/SLAB</a>
+      </p>
+    </div>
+  
+    <!-- Carnage Colosseum -->
+    <div class="project-showcase">
+      <img src="icons/cc.png" alt="Carnage Colosseum" class="project-banner">
+      <h3>Carnage Colosseum</h3>
+      <p class="project-desc">
+        A trading-card inspired horror battle app with drag-and-drop fights and dynamic visuals.<br>
+        GitHub: <a href="https://github.com/D3adchef/CarnageColosseum" class="project-link" target="_blank">https://github.com/D3adchef/CarnageColosseum</a>
+      </p>
+    </div>
+  </section>   
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form" class="contact-form">
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <div class="radio-group">
+        <label><input type="radio" name="contact-method" required /> Phone</label>
+        <label><input type="radio" name="contact-method" required /> Email</label>
+      </div>
+      <div class="checkbox-group">
+        <label><input type="checkbox" required /> Are you human?</label>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div id="popup" class="popup">Good luck... Will be contacting you soon.</div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="return-top">↑ Top</button>
+    <div class="footer-links">
+      <a href="https://github.com/D3adchef" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/joseph-marquis-a52665ab/" target="_blank">LinkedIn</a>
+      <a href="mailto:j.marquis@proton.me">Email</a>
+    </div>
+    <p>© 2025 Joseph Marquis. All rights dismembered.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/constellation.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const popup = document.getElementById('popup');
+      popup.classList.add('show');
+      setTimeout(() => popup.classList.remove('show'), 4000);
+      this.reset();
+    });
+  </script>
+</body>
+</html>

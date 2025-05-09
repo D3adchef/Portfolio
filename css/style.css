@@ -1,0 +1,364 @@
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: black;
+  scroll-behavior: smooth;
+}
+
+/* === Canvas Background === */
+#constellation-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* === Hero Section === */
+#main-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-red {
+  color: red;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.hero-button {
+  background: red;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 0 10px red;
+  transition: background 0.3s ease;
+}
+
+.hero-button:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px white;
+}
+
+/* === Section Styling === */
+section {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  color: red;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* === Updated About Section === */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.about-left, .about-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-spacer {
+  width: 100%;
+  height: 100%;
+}
+
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 60%;
+  border: 3px solid red;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 6px red;
+}
+
+.headshot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px red;
+}
+
+.bio-text {
+  color: red;
+  font-size: 1.35rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 400px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.skills-grid .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.skills-grid img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 6px red;
+  border-radius: 4px;
+}
+
+.skills-grid img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px red;
+}
+
+.skills-grid .mid-offset {
+  margin-top: -60px;
+}
+
+/* === Contact Form === */
+.contact-form {
+  background: #111;
+  border: 1px solid red;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 10px red;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px red;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: black;
+  color: white;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder {
+  color: #777;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.submit-btn {
+  padding: 12px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 10px red;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 15px white;
+}
+
+/* === Popup Animation === */
+.popup {
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  border: 1px solid red;
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  color: red;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+/* === Footer === */
+footer {
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+  margin-top: 80px;
+  z-index: 2;
+  position: relative;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+footer a:hover {
+  color: white;
+  text-shadow: 0 0 10px white;
+}
+
+.return-top {
+  background: red;
+  color: black;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px red;
+  transition: background 0.3s;
+  margin-bottom: 20px;
+}
+
+.return-top:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px white;
+}
+
+/* === Projects Showcase (Full-Width Style) === */
+.project-showcase {
+  margin-bottom: 80px;
+}
+
+.project-banner {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px red;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-banner:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px red;
+}
+
+/* Smaller size for HSlogo only */
+.hs-logo {
+  width: 50%;
+  max-width: 500px;
+}
+
+/* Project titles */
+.project-showcase h3 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: red;
+}
+
+/* GitHub link styles */
+.project-link {
+  color: red;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.project-link:hover {
+  color: white;
+  text-shadow: 0 0 10px white;
+}
+
+.project-link:active {
+  color: white;
+  text-shadow: 0 0 15px red;
+}
+
+.project-desc {
+  color: red;
+  max-width: 800px;
+  margin: 0.5rem auto 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
