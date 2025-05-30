@@ -362,3 +362,19 @@ footer a:hover {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+/* === RED TEXT & LINKS FOR ABOUT ME CONNECT === */
+.red-text {
+  color: #e53935;   /* Bright blood red */
+}
+
+.red-link {
+  color: #e53935;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.red-link:hover {
+  color: #ff6f00;   /* Orange/red glow on hover for contrast */
+  text-decoration: underline;
+}
